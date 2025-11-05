@@ -30,7 +30,12 @@ const user = {
 };
 
 // Tạo template string cho email
-const emailTemplate = `cam on ${user.firstName} ${user.lastName} da mua ${user.product} voi gia cuc toi chi ${user.price} vao ngay ${user.orderDate}}`; // Viết template ở đây
+const emailTemplate = `
+xin chao ${user.firstName} ${user.lastName} 
+cam on ban  ${user.lastName} 
+da mua ${user.product} 
+voi gia cuc toi chi ${user.price} 
+vao ngay ${user.orderDate}}`; // Viết template ở đây
 
 console.log(emailTemplate);
 
@@ -46,6 +51,41 @@ const product = {
 const finalPrice = product.price * (1 - product.discount / 100);
 
 // Tạo template HTML
-const productCard = `dien thoai ${product.name} co gia ban dau la ${product.price} gia sau giam gia la ${finalPrice}`; // Viết template ở đây
+const productCard = `dien thoai ${product.name} 
+co gia ban dau la ${product.price}
+ gia sau giam gia la ${finalPrice}`; // Viết template ở đây
 
 console.log(productCard);
+// Viết lại object sau sử dụng ES6 enhanced object literals
+const width = 100;
+const height = 200;
+const color = "red";
+
+const rectangle = {
+  width,
+  height,
+  color,
+  calculateArea() {
+    return this.width * this.height;
+  },
+  describe() {
+    return `Rectangle ${this.width}x${this.height}, color: ${this.color}`;
+  },
+};
+
+// Tạo object configuration với computed property names
+const env = "production";
+const version = "v2";
+const features = ["auth", "payment", "notification"];
+
+// Tạo object config với:
+// - key: `api_${env}_${version}`
+// - key cho từng feature: `feature_${featureName}`
+// - method: `get${env}Config()`
+
+const config = {
+  // Viết code ở đây
+};
+
+
+
