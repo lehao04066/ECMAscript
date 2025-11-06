@@ -57,11 +57,22 @@ co gia ban dau la ${product.price}
 
 console.log(productCard);
 // Viết lại object sau sử dụng ES6 enhanced object literals
+
+// const rectangle = {
+//   width: width,
+//   height: height,
+//   color: color,
+//   calculateArea: function () {
+//     return this.width * this.height;
+//   },
+//   describe: function () {
+//     return `Rectangle ${this.width}x${this.height}, color: ${this.color}`;
+//   },
+// };
 const width = 100;
 const height = 200;
 const color = "red";
-
-const rectangle = {
+const rectangleES6 = {
   width,
   height,
   color,
@@ -70,9 +81,8 @@ const rectangle = {
   },
   describe() {
     return `Rectangle ${this.width}x${this.height}, color: ${this.color}`;
-  },
+  }
 };
-
 // Tạo object configuration với computed property names
 const env = "production";
 const version = "v2";
@@ -84,8 +94,5 @@ const features = ["auth", "payment", "notification"];
 // - method: `get${env}Config()`
 
 const config = {
-  // Viết code ở đây
+  
 };
-
-
-
