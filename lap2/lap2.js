@@ -94,5 +94,15 @@ const features = ["auth", "payment", "notification"];
 // - method: `get${env}Config()`
 
 const config = {
-  
+  [`api_${env}_${version}`]: `https://api.example.com/${env}/${version}`,
+  ...features.reduce((acc, feature) => {
+    acc[`feature_${feature}`] = true;
+    return acc;
+  }, {}),
+  getProductionConfig() {
+    return {
+      api: this[`api_${env}_${version}`],
+      features: features.filter(feature => this[`feature_${feature}`]),
+    };
+  }
 };
