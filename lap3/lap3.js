@@ -53,13 +53,11 @@ const createProduct =(name="#",price=10000,quantity=10)=>{
   )
 }
 //Bai4
-const shoppingCart = (name = "Tên khách hàng", ...products) => {
-  return {
+const shoppingCart = (name = "Tên khách hàng", ...products) => ({
     customer: name,
     items: products
-  };
-};
-
+}
+)
 const order1 = shoppingCart("Hao", "Áo", "Quần", "Giày");
 console.log(order1);
 
