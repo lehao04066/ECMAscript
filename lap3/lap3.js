@@ -41,8 +41,25 @@ const mergeArrays =(...arr)=>{
 mergeArrays(1,2,3)
 mergeArrays(1,2,2,1)
 //
-const sumAll = (...numbers) => {
+const sumAll = (...numbers) => {  
   return numbers.reduce((total, num) => total + num, 0);
 };
-
 console.log(sumAll(1, 2, 3));
+const createProduct =(name="#",price=10000,quantity=10)=>{
+  return(
+    name,
+    price,
+    quantity
+  )
+}
+//Bai4
+const shoppingCart = (name = "Tên khách hàng", ...products) => {
+  return {
+    customer: name,
+    items: products
+  };
+};
+
+const order1 = shoppingCart("Hao", "Áo", "Quần", "Giày");
+console.log(order1);
+
