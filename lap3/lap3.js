@@ -25,6 +25,12 @@ const getRandomNumber=()=>{
 // document.addEventListener("click", function () {
 //   console.log("Clicked!");
 // });
-document.addEventListener("click",()=>{
-    console.log("Clicked!");
+document.addEventListener("click",()=>console.log("click")
+);
+const createUser = (name = "Anonymous", age = 18, isAdmin = false) => ({
+  name,
+  age,
+  isAdmin
 });
+console.log(createUser());
+
