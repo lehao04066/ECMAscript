@@ -1,3 +1,4 @@
+// src/components/TourCard.jsx
 import Button from "./Button";
 
 const TourCard = ({props}) => {
@@ -5,7 +6,8 @@ const TourCard = ({props}) => {
         <div>
            <h2>{props.title}</h2>
            <img src={props.image} alt="" />
-           <Button></Button>
+           <Button label="Xem Thêm"></Button>
+           <Button label="Đặt Ngay"></Button>
         </div>
     )
 }
