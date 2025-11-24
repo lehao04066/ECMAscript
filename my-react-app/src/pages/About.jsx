@@ -5,7 +5,7 @@ function About() {
         <div>
             <Header></Header>
             <h1 className="text-3xl text-blue-600">Giới thiệu</h1>
-            <p>Đây là trang giới thiệu của hệ thống Tour Management.</p>
+            <p>Đây là trang giới thiệu</p>
         </div>
     );
 }

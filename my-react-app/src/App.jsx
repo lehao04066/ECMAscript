@@ -1,11 +1,10 @@
-// src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
-import Tours from "./pages/Tour";  // Giữ như fix trước
+import Tours from "./pages/Tour";  
 
 function App() {
-  console.log('App loaded!');  // Debug: Kiểm tra App chạy
+  console.log('App loaded!'); 
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
