@@ -4,6 +4,7 @@ import List from "./pages/List";
 import Add from "./pages/Add";
 import { Route, Routes } from "react-router-dom";
 import ListPage from "./pages/List";
+import EditPage from "./pages/Edit";
 function App() {
   const [open, setOpen] = useState(false);
 
@@ -100,6 +101,7 @@ function App() {
         <Routes>
            <Route path="/list" element={<ListPage />} />
            <Route path="/add" element={<Add />} />
+          <Route path="/edit/:id" element={<EditPage />} />
          </Routes>
       </div>
       <Toaster />

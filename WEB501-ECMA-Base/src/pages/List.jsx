@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ListPage() {
   const [tours, setTours] = useState([]);
@@ -77,14 +78,14 @@ function ListPage() {
                   </td>
 
                   <td className="p-3 border text-center">
-                    <button
-                      className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
-                      onClick={() => deleteTour(tour.id)}
-                    >
-                      Xóa
-                    </button>
-                    <button className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600" href={`./edit/${tour.id}`}> Sửa</button>
-                  </td>
+                      <button
+                        className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                        onClick={() => deleteTour(tour.id)}
+                      >
+                        Xóa
+                      </button>
+                      <Link to={`/edit/${tour.id}`} className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600"> Sửa</Link>
+                    </td>
                 </tr>
               ))}
             </tbody>
