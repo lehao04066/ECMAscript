@@ -5,6 +5,7 @@ import Add from "./pages/Add";
 import { Route, Routes } from "react-router-dom";
 import ListPage from "./pages/List";
 import EditPage from "./pages/Edit";
+import Register from "./pages/Register";
 function App() {
   const [open, setOpen] = useState(false);
 
@@ -64,7 +65,7 @@ function App() {
             <a href="#" className="hover:text-gray-200">
               Đăng nhập
             </a>
-            <a href="#" className="hover:text-gray-200">
+            <a href="/register" className="hover:text-gray-200">
               Đăng ký
             </a>
           </div>
@@ -101,7 +102,9 @@ function App() {
         <Routes>
            <Route path="/list" element={<ListPage />} />
            <Route path="/add" element={<Add />} />
+           <Route path="/register" element={<Register />} />
           <Route path="/edit/:id" element={<EditPage />} />
+          
          </Routes>
       </div>
       <Toaster />
