@@ -8,7 +8,8 @@
       "image": "https://picsum.photos/400/300?random=4",
       "description": "Thành phố ngàn hoa với khí hậu mát mẻ quanh năm",
       "available": 10,
-      "id": 4
+      "id": 4,
+      "active": true
     },
     {
       "id": 5,
@@ -18,7 +19,8 @@
       "price": 3200000,
       "image": "https://picsum.photos/400/300?random=3",
       "description": "Thành phố ngàn hoa với khí hậu mát mẻ quanh năm",
-      "available": 10
+      "available": 10,
+      "active": true
     },
     {
       "id": 6,
@@ -81,8 +83,34 @@
       "image": "11",
       "duration": "111",
       "available": 1,
-      "active": true,
+      "active": false,
       "id": 15
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "111",
+      "id": 16
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "111",
+      "id": 17
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "111",
+      "id": 18
+    },
+    {
+      "name": "1",
+      "price": 111,
+      "category": "Tour Nội địa",
+      "description": "111",
+      "image": "111",
+      "duration": "11",
+      "available": 2,
+      "active": false,
+      "id": 19
     }
   ],
   "destinations": [
@@ -113,13 +141,8 @@
     },
     {
       "email": "admin@gmail.com",
-      "password": "$2a$10$koSBUHxmBFBHKwj5Wg8hmOOq0DuA01s/9bjwypSpxnEusvJEv.8QO",
+      "password": "$2a$10$e8mgoUFBErI8xKO.yVHSeuDPO9iWCZtUuI0bwy2UdI.VI1DURySSO",
       "id": 2
-    },
-    {
-      "email": "admin1@gmail.com",
-      "password": "$2a$10$BGdtcNVbUnXTKOt7Cthj/usNpw1v.M.8hLNqGMiamkgBPyFYj2SUu",
-      "id": 3
     }
   ]
 }

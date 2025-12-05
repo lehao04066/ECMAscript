@@ -1,63 +1,66 @@
-import React, { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import axios from 'axios';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 function RegisterPage() {
-const [formData, setFormData] = useState({
-name: "",
-email: "",
-password: "",
-confirmPassword: "",
-});
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-const handleChange = (e) => {
-setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+  // handleChange
 
-const handleSubmit = (e) => {
-e.preventDefault();
+  const handleSubmit = async event => {
+    event.preventDefault(); // ngan can load form
+    try {
+      await axios.post(' http://localhost:3000/register', {
+        email,
+        password,
+      });
+      toast.success('Đăng ký được rồi nha!');
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-semibold mb-6">Thêm mới</h1>
 
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        {/* Text input */}
+        <div>
+          <label htmlFor="text" className="block font-medium mb-1">
+            Email
+          </label>
+          <input
+            value={email} // document.getElementBy(id).value
+            onChange={event => setEmail(event.target.value)}
+            type="email"
+            id="text"
+            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label htmlFor="text" className="block font-medium mb-1">
+            Password
+          </label>
+          <input
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+            type="password"
+            id="text"
+            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
 
-```
-// Gửi dữ liệu lên API hoặc xử lý đăng ký
-console.log("Data đăng ký:", formData);
-toast.success("Đăng ký thành công!");
-
-// Reset form
-setFormData({ name: "", email: "", password: "", confirmPassword: "" });
-```
-
-};
-
-return ( <div className="min-h-screen flex items-center justify-center bg-gray-100"> <Toaster /> <form
-     className="bg-white p-8 rounded shadow-md w-full max-w-md"
-     onSubmit={handleSubmit}
-   > <h2 className="text-2xl font-bold mb-6 text-center">Đăng Ký</h2> <div className="mb-4"> <label className="block mb-1">Tên</label> <input
-         type="text"
-         name="name"
-         value={formData.name}
-         onChange={handleChange}
-         className="w-full border p-2 rounded"
-         required
-       /> </div> <div className="mb-4"> <label className="block mb-1">Email</label> <input
-         type="email"
-         name="email"
-         value={formData.email}
-         onChange={handleChange}
-         className="w-full border p-2 rounded"
-         required
-       /> </div> <div className="mb-4"> <label className="block mb-1">Mật khẩu</label> <input
-         type="password"
-         name="password"
-         value={formData.password}
-         onChange={handleChange}
-         className="w-full border p-2 rounded"
-         required
-       /> </div> <button
-       type="submit"
-       className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
-     >
-Đăng Ký </button> </form> </div>
-);
+        {/* Submit button */}
+        <button
+          type="submit"
+          className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default RegisterPage;
