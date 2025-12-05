@@ -62,7 +62,7 @@ function App() {
 
           {/* Right menu desktop */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#" className="hover:text-gray-200">
+            <a href="/login" className="hover:text-gray-200">
               Đăng nhập
             </a>
             <a href="/register" className="hover:text-gray-200">
@@ -103,10 +103,9 @@ function App() {
            <Route path="/list" element={<ListPage />} />
            <Route path="/add" element={<Add />} />
            <Route path="/register" element={<RegisterPage />} />
+           <Route path="/login" element={<LoginPage />} />
           <Route path="/edit/:id" element={<EditPage />} />
-          
-
-          
+                  
          </Routes>
       </div>
       <Toaster />
